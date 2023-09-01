@@ -1,0 +1,1 @@
+py C:/rei/Repositories/Dota2CameraDistance/set_camera_distance.py 1600 & C:/rei/software/steam/steam.exe steam://run/570

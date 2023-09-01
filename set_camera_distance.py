@@ -2,7 +2,7 @@ import os
 import io
 import re
 import struct
-
+import sys
 
 def isRegexControlCharacter(ch):
     return (
@@ -69,14 +69,19 @@ def main():
         
 
         print(f"Previous value: {previousValue}")
-        newValue = input("Enter new value: ")
-        newValue = float(newValue);
+        if (sys.argv == 1):
+            newValue = input("Enter new value: ")
+            newValue = float(newValue);
+        else: 
+            newValue = float(sys.argv[1]);
+        print(f"New value: {newValue}")
+        
         file.close();
         with open(f"{PATH}", "wb") as new:
             new.write(chunk[:offsetToValue])
             new.write(bytearray(struct.pack("f", newValue)))
             new.write(chunk[offsetToValue+4:]);
-
+        print(f"Client.dll has been written")
 
 if __name__ == "__main__":
     main()
