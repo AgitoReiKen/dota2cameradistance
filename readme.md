@@ -6,3 +6,5 @@ If you want to use it, change paths in:
 - python script
 - batch file
 Then just run .bat
+
+Got idea from https://github.com/searayeah/dota-camera-distance
